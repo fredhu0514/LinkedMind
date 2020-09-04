@@ -1,2 +1,10 @@
-Forum Page
+<h2>Forum Page</h2>
+<br><br><br><br>
+{{#if tasks}}
+  {{#each tasks}}
+    <p>{{title}} {{description}} {{privacy}}</p>
+    <p>{{user.displayName}}</p>
+    <p>------------</p>
+  {{/each}}
+{{/if}}
 <a href='/home'>Back</a>

@@ -1,0 +1,12 @@
+<h2>Dashboard (Private) Page</h2>
+<a href='/dashboard/showpublic'>Show public</a> || <a href='/dashboard/showprivate'>Show private</a> || <a href='/dashboard'>Show all</a>
+<br><br><br><br>
+{{#if privatetasks}}
+  {{#each privatetasks}}
+    <p>{{title}} {{description}} {{privacy}}</p>
+  {{/each}}
+{{/if}}
+<br><br><br><br>
+<a href='/dashboard/add'>Create a new story</a>
+<br><br><br><br>
+<a href='/home'>Back</a>
