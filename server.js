@@ -59,7 +59,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Routes
 app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
-
+app.use('/home', require('./routes/home'));
+app.use('/dashboard', require('./routes/dashboard'));
+app.use('/forum', require('./routes/forum'));
+app.use('/leaderboard', require('./routes/leaderboard'));
 
 
 const PORT = process.env.PORT || 3000;
