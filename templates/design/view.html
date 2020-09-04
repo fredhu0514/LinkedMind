@@ -13,7 +13,7 @@
             </div>
 
             <div class="layui-col-md1">
-                <h1> Update </h1>
+                <h1> View </h1>
             </div>
         </div>
     </head>
@@ -53,12 +53,12 @@
                         HOME
                     </button> </br></br>
 
-                    <button id="CANCEL" type="button" class="layui-btn layui-btn-sm layui-btn-radius" name="GO_HOME" onclick="javascript: cancel();" style="width:90px">
-                        CANCEL
+                    <button id="EDIT" type="button" class="layui-btn layui-btn-sm layui-btn-radius" name="GO_HOME" onclick="javascript: editing();" style="width:90px">
+                        EDIT
                     </button> </br></br>
 
-                    <button id="UPDATE" type="button" class="layui-btn layui-btn-sm layui-btn-radius" name="GO_HOME" style="width:90px">
-                        UPDATE
+                    <button id="NEW" type="button" class="layui-btn layui-btn-sm layui-btn-radius" name="GO_HOME" onclick="javascript: new_task();" style="width:90px">
+                        NEW
                     </button> </br></br>
 
                     <button id="DELETE" type="button" class="layui-btn layui-btn-sm layui-btn-radius" name="GO_HOME" onclick="javascript: delete_req();" style="width:90px">
@@ -75,45 +75,16 @@
             window.location.href = "file:///Users/fredhu/Desktop/UCSDB/team-chongchongchong/templates/design/create.html";
         };
 
-        function cancel(){
-            // Reload the page so everything is cleared
-            window.location.href = "file:///Users/fredhu/Desktop/UCSDB/team-chongchongchong/templates/design/view.html";
-        };
-
-        // UPDATE 👇 UPDATE 👇 UPDATE 👇 UPDATE 👇
-
-        layui.use('layer', function(){
-            var $ = layui.jquery, layer = layui.layer;
-            function tempfunc(){
-                layer.msg("Sucessfully updated.", {
-                    time: 20000,
-                    btn: "CLOSE"
-                });
-            }
-
-            $('#UPDATE').on('click', function(){
-                update();
-                if (update_flag){
-                    tempfunc();
-                } else {
-                    window.alert("Updating Failure");
-                }
-                update_flag = false;
-                window.location.href = "file:///Users/fredhu/Desktop/UCSDB/team-chongchongchong/templates/design/view.html";
-            });
-        });
-
-        var update_flag = false;
-
-        function update(){
-            window.alert("ADD POST REQUEST HERE!");
-            update_flag = true;
-        };
-
-        // UPDATE 👆 UPDATE 👆 UPDATE 👆 UPDATE 👆
-
         function delete_req(){
             window.alert("ADD DELETE REQUEST HERE!");
+        }
+
+        function editing(){
+            window.location.href = "file:///Users/fredhu/Desktop/UCSDB/team-chongchongchong/templates/design/update.html";
+        }
+
+        function new_task(){
+            window.location.href = "file:///Users/fredhu/Desktop/UCSDB/team-chongchongchong/templates/design/create.html";
         }
 
     </script>

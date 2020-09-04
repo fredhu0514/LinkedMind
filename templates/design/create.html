@@ -1,40 +1,113 @@
-<!--DOCTYPE html-->
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../layui_css/layui-v2.5.6/layui/css/layui.css"  media="all">
+<script type="text/javascript" src="../layui_css/layui-v2.5.6/layui/layui.js"></script>
 
 <html>
+    <head>
+        <div class="layui-container">
+            <div class="layui-col-md1">
+                <h1> &nbsp; </h1>
+            </div>
 
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <div class="layui-col-md1">
+                <h1> Create </h1>
+            </div>
+        </div>
+    </head>
 
-<head>
-    <h1> Creating an event. </h1>
-</head>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
 
-<body>
+    <body>
+        <div class="layui-container">
+            <div class="layui-row">
+                <div class="layui-col-md1">
+                    <!--PLACE HOLDER-->
+                    &nbsp;
+                </div>
 
-    <div>
-        Date: *{{ Event Date and Time Here (date selection / Time selection) ~ (date selection / Time selection) }} <br/>
-        Title: *{{ Event Title (Text Input Maximum 64 Length) }} <br/>
-        Type: *{{ Event Tage e.g. Sports (roll down menu) }} <br/>
-        Content: *{{ Big Content (Text Area 256 Max Length) }} <br/>
-        Sign Up ddl: *{{ Event Date and Time Here (date selection / Time selection) }} <br/>
-        Tags: *{{ Tages (multi-selection box) }}
-        Invitation: {{ My Friends (roll down menu) }} <br/>
-        Location: {{ Event Location (text input) }} <br/>
-    </div>
+                <div class="layui-col-md2">
+                    <!--TITLES-->
+                    Titles
+                </div>
 
-    <div>
-        <button id="HOME_PAGE" type="button" name="GO_HOME" onclick="" >HOME</button>
-        <button id="HOME_PAGE" type="button" name="GO_HOME" onclick="" >CANCEL</button>
-        <button id="HOME_PAGE" type="button" name="GO_HOME" onclick="" >SUBMIT</button>
-        <button id="HOME_PAGE" type="button" name="GO_HOME" onclick="" >UPDATE</button>
-        <button id="HOME_PAGE" type="button" name="GO_HOME" onclick="" >DELETE</button>
-    </div>
+                <div class="layui-col-md6">
+                    <!--TEXT-->
+                    Text
+                </div>
 
-</body>
+                <div class="layui-col-md1">
+                    <!--PLACE HOLDER-->
+                    &nbsp;
+                </div>
+
+                <div class="layui-col-md2">
+                    <!--BUTTONS-->
+                    <button id="HOME_PAGE" type="button" class="layui-btn layui-btn-sm layui-btn-radius" name="GO_HOME" onclick="javascript: to_home_page();" style="width:90px">
+                        HOME
+                    </button> </br></br>
+
+                    <button id="CANCEL" type="button" class="layui-btn layui-btn-sm layui-btn-radius" name="GO_HOME" onclick="javascript: cancel();" style="width:90px">
+                        CANCEL
+                    </button> </br></br>
+
+                    <button id="SUBMIT" type="button" class="layui-btn layui-btn-sm layui-btn-radius" name="GO_HOME" style="width:90px">
+                        SUBMIT
+                    </button> </br></br>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        function to_home_page(){
+            // Redirect to Home Page
+            window.location.href = "file:///Users/fredhu/Desktop/UCSDB/team-chongchongchong/templates/design/create.html";
+        };
+
+        function cancel(){
+            // Reload the page so everything is cleared
+            window.location.reload();
+        };
+
+        // SUBMIT 👇 SUBMIT 👇 SUBMIT 👇 SUBMIT 👇
+
+        layui.use('layer', function(){
+            var $ = layui.jquery, layer = layui.layer;
+            function tempfunc(){
+                layer.msg("Sucessfully submitted.", {
+                    time: 20000,
+                    btn: "CLOSE"
+                });
+            }
+
+            $('#SUBMIT').on('click', function(){
+                submit();
+                if (submit_flag){
+                    tempfunc();
+                } else {
+                    window.alert("Submission Failure");
+                }
+                submit_flag = false;
+                window.location.href = "file:///Users/fredhu/Desktop/UCSDB/team-chongchongchong/templates/design/view.html";
+            });
+        });
+
+        var submit_flag = false;
+
+        function submit(){
+            window.alert("ADD POST REQUEST HERE!");
+            submit_flag = true;
+        };
+
+        // SUBMIT 👆 SUBMIT 👆 SUBMIT 👆 SUBMIT 👆
+
+    </script>
 
 </html>
