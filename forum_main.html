@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="./layui_css/layui-v2.5.6/layui/css/layui.css"  media="all">
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -10,6 +16,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>team-ucsdb Unicode Project</title>
   </head>
+
   <body>
     <nav>
       <div class="nav-wrapper">
@@ -25,7 +32,10 @@
       </div>
     </nav>
 
-    <h2>Forum Page</h2>
+    <div class="layui-container">
+    <blockquote>
+      <h2>Forum</h2>
+    </blockquote>
     <div class="row">
       <div class="col s12 m4">
         <div class="card">
@@ -40,8 +50,11 @@
               <a href="/forum/user/{{user._id}}">{{user.displayName}}</a>
             </div>
             <div class="card-action center-align">
-              <a href="/forum/{{_id}}" class="btn grey">Read More</a>
+              <a href="/forum/{{_id}}" class="btn blue">Read More</a>
+              <!- 需要链接post ->
+              <a href="/forum/{{_id}}" class="btn red">♥Like</a>
             </div>
+
           </div>
         </div>
       </div>
@@ -49,7 +62,8 @@
     </div>
     <br><br><br><br>
 
-    <a href='/home'>Back</a>
+    <a href='/home' class="btn grey">Back</a>
+    </div>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
