@@ -1,6 +1,7 @@
+<!-version 2.0 Community和home page一致->
 <div class="layui-container">
   <blockquote>
-    <h2>Forum</h2>
+    <h2>Community</h2>
   </blockquote>
   <div class="row">
     {{#if tasks}}
@@ -11,7 +12,7 @@
               {{!-- TODO --}}
             </div>
             <div class="card-content center-align">
-              <h5>{{title}}</h5>
+              <h5>"{{title}}"</h5>
               <p>{{stripTags (truncate description 150)}}</p>
               <br>
               <div class="chip">
@@ -20,7 +21,7 @@
               </div>
               <div class="card-action center-align">
                 <a href="/forum/view/{{_id}}" class="btn grey">Read More</a>
-                <a href="/forum" class="btn red">♥Like</a>
+                <a href="/forum" class="btn red">❤️Like❤️</a>
               </div>
             </div>
           </div>

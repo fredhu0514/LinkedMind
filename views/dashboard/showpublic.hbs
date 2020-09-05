@@ -15,9 +15,9 @@
           <div class="card-image">
           </div>
           <div class="card-content center-align">
-            <h5>{{title}}</h5>
-            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss'}}</td>
-            <p>{{stripTags (truncate description 150)}}</p>
+            <h5>"{{title}}"</h5>
+            <td>"{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss'}}"</td>
+            <p>"{{stripTags (truncate description 150)}}"</p>
             <br>
             <div class="card-action center-align">
               <a href="/dashboard/{{_id}}/edit" class="btn-float btn blue">Edit</a>
