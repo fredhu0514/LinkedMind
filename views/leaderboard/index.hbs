@@ -1,18 +1,21 @@
-<h2>Leaderboard Page</h2>
-<table class="striped">
-  <thead class="striped">
-    <tr>
-      <th>Name</th>
-      <th>Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each allusers}}
+<div class="layui-container">
+  <blockquote>
+    <h2>Leaderboard</h2>
+  </blockquote>
+  <table class="striped">
+    <thead class="striped">
       <tr>
-        <td>{{displayName}}</td>
-        <td>{{score}}</td>
+        <th>Name</th>
+        <th>Score</th>
       </tr>
-    {{/each}}
-  </tbody>
-</table>
-<a href='/home'>Back</a>
+    </thead>
+    <tbody>
+      {{#each allusers}}
+        <tr>
+          <td>{{displayName}}</td>
+          <td>{{score}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

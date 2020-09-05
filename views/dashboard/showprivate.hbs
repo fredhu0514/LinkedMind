@@ -1,28 +1,34 @@
-<h2>Dashboard (Private) Page</h2>
-<a href='/dashboard/showpublic'>Show public</a> || <a href='/dashboard/showprivate'>Show private</a> || <a href='/dashboard'>Show all</a>
-<br><br><br><br>
-{{#if privatetasks}}
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Date</th>
-        <th>Privacy</th>
-        <th>Author</th>
-      </tr>
-    </thead>
-    <tbody>
+<div class="layui-container">
+  <blockquote>
+    <h2>Dashboard</h2>
+  </blockquote>
+  <ul class="pagination">
+    <li class="waves-effect"><a href="/dashboard">Show All</a></li>
+    <li class="waves-effect"><a href="/dashboard/showpublic">Show Public</a></li>
+    <li class="active"><a href="/dashboard/showprivate">Show Private</a></li>
+  </ul>
+  {{#if privatetasks}}
+    <div class="row">
       {{#each privatetasks}}
-        <tr>
-          <td><a href="/forum/{{_id}}">{{title}}</a></td>
-          <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss'}}</td>
-          <td>{{privacy}}</td>
-          <td>{{user.displayName}}</td>
-        </tr>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+          </div>
+          <div class="card-content center-align">
+            <h5>{{title}}</h5>
+            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss'}}</td>
+            <p>{{stripTags (truncate description 150)}}</p>
+            <br>
+            <div class="card-action center-align">
+              <a href="/dashboard/{{_id}}/edit" class="btn blue">Edit</a>
+              <a href="/dashboard/{{_id}}" class="btn blue">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
       {{/each}}
-    </tbody>
-{{/if}}
-<br><br><br><br>
-<a href='/dashboard/add'>Create a new story</a>
-<br><br><br><br>
-<a href='/home'>Back</a>
+    </div>
+  {{/if}}
+  <br><br><br><br>
+  <a class="btn-floating btn-large waves-effect waves-light red right" href='/dashboard/add'><i class="material-icons"> + </i></a>
+</div>

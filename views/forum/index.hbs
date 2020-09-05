@@ -1,29 +1,30 @@
-<h2>Forum Page</h2>
-<div class="row">
-  {{#if tasks}}
-    {{#each tasks}}
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            {{!-- TODO --}}
-          </div>
-          <div class="card-content center-align">
-            <h5>{{title}}</h5>
-            <p>{{stripTags (truncate description 150)}}</p>
-            <br>
-            <div class="chip">
-              <img src="{{user.image}}" alt="">
-              <a href="/forum/user/{{user._id}}">{{user.displayName}}</a>
+<div class="layui-container">
+  <blockquote>
+    <h2>Forum</h2>
+  </blockquote>
+  <div class="row">
+    {{#if tasks}}
+      {{#each tasks}}
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              {{!-- TODO --}}
             </div>
-            <div class="card-action center-align">
-              <a href="/forum/{{_id}}" class="btn grey">Read More</a>
+            <div class="card-content center-align">
+              <h5>{{title}}</h5>
+              <p>{{stripTags (truncate description 150)}}</p>
+              <br>
+              <div class="chip">
+                <img src="{{user.image}}" alt="">
+                <a href="/forum/user/{{user._id}}">{{user.displayName}}</a>
+              </div>
+              <div class="card-action center-align">
+                <a href="/forum/{{_id}}" class="btn grey">Read More</a>
+                <a href="/forum" class="btn red">♥Like</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    {{/each}}
-  {{/if}}
-</div>
-<br><br><br><br>
-
-<a href='/home'>Back</a>
+      {{/each}}
+    {{/if}}
+  </div>
