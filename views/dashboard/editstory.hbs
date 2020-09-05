@@ -1,21 +1,23 @@
 
 <div class="layui-container">
-  <h2>Post New Story</h2>
+  <h2>Edit</h2>
 <div class="row">
-  <form action="/dashboard" method="POST" class="col s12">
+  <form action="/dashboard/{{_id}}" method="POST" class="col s12">
 
     <div class="row">
       <div class="input-field">
-        <input type="text" id="title" name="title" placeholder="Title Here">
+        <input type="text" id="title" name="title" value="{{task.title}}">
         <label for="title">Title</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field">
-        <select id="privacy" name="privacy" placeholder="Public">
-          <option value="public" selected>Public</option>
-          <option value="private">Private</option>
+        <select id="privacy" name="privacy">
+          {{#select task.privacy}}
+            <option value="public" selected>Public</option>
+            <option value="private">Private</option>
+          {{/select}}
         </select>
         <label for="privacy">Privacy</label>
       </div>
@@ -23,8 +25,8 @@
 
     <div class="row">
       <div class="input-field">
-        <textarea id="description" name="description" class="materialize-textarea" placeholder="Content Here"></textarea>
-        <label for="textarea1">Content</label>
+        <h6>Description</h6>
+        <textarea id="description" name="description">{{task.description}}</textarea>
         </script>
       </div>
     </div>

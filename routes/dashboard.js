@@ -16,6 +16,17 @@ router.get('/', ensureAuth, async (req, res) => {
   }
 })
 
+// @description     'Read More'
+// @route           GET /dashboard/view/:id
+router.get('/view/:id', ensureAuth, async (req, res) => {
+  const task = await Task.findOne({
+    _id: req.params.id
+  }).lean()
+  res.render('dashboard/viewstory', {
+    task
+  })
+})
+
 // @description
 // @route           GET /dashboard/showpublic
 router.get('/showpublic', ensureAuth, async (req, res) => {
@@ -40,6 +51,17 @@ router.get('/showprivate', ensureAuth, async (req, res) => {
   } catch (err) {
     console.error(err)
   }
+})
+
+// @description     'Edit'
+// @route           GET /dashboard/:id/edit
+router.get('/:id/edit', ensureAuth, async (req, res) => {
+  const task = await Task.findOne({
+    _id: req.params.id
+  }).lean()
+  res.render('dashboard/editstory', {
+    task
+  })
 })
 
 // @description     Add a new story
