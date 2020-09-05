@@ -11,12 +11,12 @@
               {{!-- TODO --}}
             </div>
             <div class="card-content center-align">
-              <h5>"{{title}}"</h5>
-              <p>"{{stripTags (truncate description 150)}}"</p>
+              <h5>{{title}}</h5>
+              <p>{{stripTags (truncate description 150)}}</p>
               <br>
               <div class="chip">
                 <img src="{{user.image}}" alt="">
-                <a href="/forum/user/{{user._id}}">"{{user.displayName}}"</a>
+                <a href="/forum/user/{{user._id}}">{{user.displayName}}</a>
               </div>
               <div class="card-action center-align">
                 <a href="/forum/view/{{_id}}" class="btn grey btn-float">Read More</a>
