@@ -49,7 +49,7 @@ router.post('/:uid/:tid', ensureAuth, async (req, res) => {
 
   user = await User.findOneAndUpdate({ _id: req.params.uid},
     {
-      uscore: Number(2)
+      uscore: user.uscore + 1
     },
     {
       new: true,
@@ -59,7 +59,7 @@ router.post('/:uid/:tid', ensureAuth, async (req, res) => {
 
   task = await Task.findOneAndUpdate({ _id: req.params.tid},
     {
-      tscore: Number(2)
+      tscore: task.tscore + 1
     },
     {
       new: true,
