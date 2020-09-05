@@ -6,7 +6,7 @@
     <thead>
       <tr>
         <th>Title</th>
-        <th>Description</th>
+        <th>Date</th>
         <th>Privacy</th>
         <th>Author</th>
       </tr>
@@ -14,8 +14,8 @@
     <tbody>
       {{#each alltasks}}
         <tr>
-          <td>{{title}}</td>
-          <td>{{description}}</td>
+          <td><a href="/forum/{{_id}}">{{title}}</a></td>
+          <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss'}}</td>
           <td>{{privacy}}</td>
           <td>{{user.displayName}}</td>
         </tr>

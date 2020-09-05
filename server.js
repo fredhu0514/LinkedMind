@@ -33,8 +33,14 @@ if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
 }
 
+// Handlebars Helpers
+const { formatDate } = require('./helpers/hbs')
+
 // Handlebars
 app.engine('.hbs', exphbs({
+  helpers: {
+    formatDate
+  },
   defaultLayout: 'main',
   extname: '.hbs',
   handlebars: allowInsecurePrototypeAccess(Handlebars)
