@@ -1,3 +1,5 @@
+<!-- @author Fred Hu -->
+
 <!-LayUI->
 <div class="layui-container">
 
@@ -29,25 +31,23 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="input-field">
+      <input type="text" id="title" name="title" style="#000000;" readonly value={{task.user.displayName}}>
+      <label for="title">Creator</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field">
+      <input type="text" id="title" name="title" style="#000000;" readonly value={{task.createdAt}}>
+      <label for="title">Publish Date</label>
+    </div>
+  </div>
+
 </form>
 
 <!-Need one more parameter called is_created_by_me (bool)->
 
 <button href="/forum" class="btn waves-effect waves-light red" style="width:70pt;">BACK</button>
 </div>
-
-
-
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js" integrity="sha512-P4rrEImABBYtBFdmrFPqF8rjh8iiRiupfQ4KLrBCL8dAivLiM2nh+1bJQeMb2ZglmIlGZdfTtgGdXH6H/hGVeg==" crossorigin="anonymous"></script>
-
-
-<script>
-M.AutoInit();
-$(document).ready(function() {
-$('select').material_select();
-});
-M.FormSelect.init(document.querySelector('#status'))
-
-</script>
