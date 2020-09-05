@@ -25,9 +25,17 @@
       </div>
     </nav>
 
-    <h2>Dashboard Page</h2>
-    <a href='/dashboard/showpublic'>Show public</a> || <a href='/dashboard/showprivate'>Show private</a> || <a href='/dashboard'>Show all</a>
-    <br><br><br><br>
+    <blockquote>
+      <h2>Dashboard</h2>
+    </blockquote>
+    <ul class="pagination">
+      <!- 注意不同的link active也不同 ->
+      <li class="active"><a href="/dashboard/showpublic">Show Public</a></li>
+      <li class="waves-effect"><a href="/dashboard/showprivate">Show Private</a></li>
+      <li class="waves-effect"><a href="/dashboard'">Show All</a></li>
+      <a class="btn-floating btn-large waves-effect waves-light red" href='/dashboard/add'><i class="material-icons"> + </i></a>
+    </ul>
+
     <table class="striped">
       <thead>
         <tr>
@@ -57,10 +65,9 @@
           <td>{{user.displayName}}</td>
         </tr>
       </tbody>
-    <br><br><br><br>
-    <a href='/dashboard/add'>Create a new story</a>
-    <br><br><br><br>
-    <a href='/home'>Back</a>
+    </table>
+    <br>
+    <a href='/home' class="btn grey">Back</a>
 
 
 
