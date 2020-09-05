@@ -49,19 +49,37 @@
   }
 </style>
 </head>
-<body>
-  
-<div class="secondary-menu-bar">
-  <a href='/forum'>&lt;Back</a>
-</div>
-<div class="wrapper">
-  <div class="name-holder">
-    <div class="avatar-holder">
-      <div class="avatar">DN</div>
-    </div>
-    <div class="nick-holder">
-      <div id="nick">{{user.displayName}}</div>
-    </div>
-    <div class="c"></div>
-  </div>
+
+<div class="layui-container">
+    <blockquote>
+        <h2>{{user.displayName}}</h2>
+    </blockquote>
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="{{user.image}}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <div class="card horizontal">
+                  <div class="card-stacked">
+                      <div class="card-content">
+                          <p>Likes: {{user.score}}</p>
+                      </div>
+                  </div>
+              </div>
+              <ul class="collection">
+                {{#each alltasks}}
+                  <li class="collection-item">Title: {{title}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <br><br><br><br>
+
+    <a href='/home' class="btn grey">Back</a>
 </div>

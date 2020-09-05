@@ -34,8 +34,10 @@ router.get('/user/:id', ensureAuth, async (req, res) => {
   const user = await User.findOne({
     _id: req.params.id
   }).lean()
+  const alltasks = await Task.find({ privacy: 'public', user: req.user.id }).sort({ createdAt: 'desc' }).lean()
   res.render('forum/viewuser', {
-    user
+    user,
+    alltasks
   })
 })
 
