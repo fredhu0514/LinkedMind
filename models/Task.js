@@ -18,6 +18,10 @@ const TaskSchema = new mongoose.Schema({
         type: String,
         enums: ['public', 'private'],
         required: true
+    },
+    tscore: {
+      type: Number,
+      default: 0
     }
 }, {
     timestamps: true

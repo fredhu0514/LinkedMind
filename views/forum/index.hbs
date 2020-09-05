@@ -19,8 +19,12 @@
                 <a href="/forum/user/{{user._id}}">{{user.displayName}}</a>
               </div>
               <div class="card-action center-align">
-                <a href="/forum/view/{{_id}}" class="btn grey">Read More</a>
-                <a href="/forum" class="btn red">♥Like</a>
+                <a href="/forum/view/{{_id}}" class="btn grey btn-float">Read More</a>
+                <form action="/forum/{{user._id}}/{{_id}}" method="POST">
+                  <button type="submit" class="btn red">
+                    <i class="fas fa-heart left"></i>{{tscore}}
+                  </button>
+                </form>
               </div>
             </div>
           </div>

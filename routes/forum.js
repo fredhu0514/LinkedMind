@@ -34,11 +34,40 @@ router.get('/user/:id', ensureAuth, async (req, res) => {
   const user = await User.findOne({
     _id: req.params.id
   }).lean()
-  const alltasks = await Task.find({ privacy: 'public', user: req.user.id }).sort({ createdAt: 'desc' }).lean()
+  const alltasks = await Task.find({ privacy: 'public', user: req.params.id }).sort({ createdAt: 'desc' }).lean()
   res.render('forum/viewuser', {
     user,
     alltasks
   })
+})
+
+// @description     add one point for task
+// @route           POST /forum/:uid/:tid
+router.post('/:uid/:tid', ensureAuth, async (req, res) => {
+  let user = await User.findById(req.params.uid).lean()
+  let task = await Task.findById(req.params.tid).lean()
+
+  user = await User.findOneAndUpdate({ _id: req.params.uid},
+    {
+      uscore: Number(2)
+    },
+    {
+      new: true,
+      runValidators: true
+    }
+  );
+
+  task = await Task.findOneAndUpdate({ _id: req.params.tid},
+    {
+      tscore: Number(2)
+    },
+    {
+      new: true,
+      runValidators: true
+    }
+  );
+
+  res.redirect('/forum')
 })
 
 module.exports = router
