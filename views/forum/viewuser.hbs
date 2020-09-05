@@ -52,7 +52,7 @@
 
 <div class="layui-container">
     <blockquote>
-        <h2>{{user.displayName}}</h2>
+        <h2>{{user.displayName}}'s Profile</h2>
     </blockquote>
     <br><br>
     <div class="col s12 m8 offset-m2 l6 offset-l3">
@@ -65,11 +65,12 @@
               <div class="card horizontal">
                   <div class="card-stacked">
                       <div class="card-content">
-                          <p>Total Likes: {{user.uscore}}</p>
+                          <p style="font:30pt">Total Likes: {{user.uscore}} &nbsp;&nbsp;❤️ </p>
                       </div>
                   </div>
               </div>
               <ul class="collection">
+                <div style="font:30pt"> Top Five Popular story: </div>
                 {{#each alltasks}}
                   <li class="collection-item">{{title}}</li>
                 {{/each}}
