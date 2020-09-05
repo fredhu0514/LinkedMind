@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema({
     image: {
         type: String
     },
-    score: {
+    uscore: {
         type: Number,
         default: 0
     },

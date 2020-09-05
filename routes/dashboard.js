@@ -111,6 +111,7 @@ router.put('/:id', ensureAuth, async (req, res) => {
   if (task.user != req.user.id) {
     res.redirect('/dashboard')
   } else {
+    console.log(req.body)
     task = await Task.findOneAndUpdate({ _id: req.params.id }, req.body, {
       new: true,
       runValidators: true
