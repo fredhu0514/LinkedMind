@@ -22,4 +22,10 @@ router.get('/:id', ensureAuth, async (req, res) => {
 
 })
 
+// @description
+// @route           GET /forum/user/:id
+router.get('/user/:id', ensureAuth, async (req, res) => {
+
+})
+
 module.exports = router
