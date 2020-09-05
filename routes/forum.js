@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { ensureAuth } = require('../middleware/auth')
+const User = require('../models/User');
 const Task = require('../models/Task');
 
 // @description
@@ -17,15 +18,25 @@ router.get('/', ensureAuth, async (req, res) => {
 })
 
 // @description
-// @route           GET /forum/:id
+// @route           GET /forum/view/:id
 router.get('/:id', ensureAuth, async (req, res) => {
-
+  const task = await Task.findOne({
+    _id: req.params.id
+  }).lean()
+  res.render('forum/viewstory', {
+    task
+  })
 })
 
 // @description
 // @route           GET /forum/user/:id
 router.get('/user/:id', ensureAuth, async (req, res) => {
-
+  const user = await User.findOne({
+    _id: req.params.id
+  }).lean()
+  res.render('forum/viewuser', {
+    user
+  })
 })
 
 module.exports = router
