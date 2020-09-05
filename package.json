@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node app",
-    "dev": "cross-env NODE_ENV=development nodemon app"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,6 @@
     "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2",
     "handlebars": "^4.5.0",
     "nodemon": "^2.0.4"
   }
