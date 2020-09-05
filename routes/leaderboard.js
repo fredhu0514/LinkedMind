@@ -9,7 +9,8 @@ router.get('/', ensureAuth, async (req, res) => {
   try {
     const allusers = await User.find().sort({ uscore: 'desc' }).lean()
     res.render('leaderboard/index', {
-      allusers
+      allusers,
+      userId: req.user.id
     })
   } catch (err) {
     console.error(err)
