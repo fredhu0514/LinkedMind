@@ -1,0 +1,60 @@
+* {
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+.header{
+  background:#63BECA;
+  height:200px;
+  line-height:200px;
+  width:100%;
+  font-size:72px;
+  text-align:center;
+  overflow:hidden;
+}
+
+#header-home{
+  width:100%;
+}
+.btn-group-home{
+}
+.btn-group-home button{
+  width:25%;
+  height:350px;
+  float:left;
+  margin:2% 4.16%;
+  background:#CE9497;
+  border-radius:30px;
+  border:none;
+  transition: border-radius 0.2s;
+  -webkit-transition: border-radius 0.2s;
+}
+.btn-group-home button:hover{
+  border-radius:60px;
+  transition: border-radius 0.2s;
+  -webkit-transition: border-radius 0.2s;
+}
+.btn-group-home a{
+  color:black;
+  font-size:24px;
+  transition: font-size 0.2s;
+  -webkit-transition: font-size 0.2s;
+}
+.btn-group-home a:hover{
+  font-size:36px;
+}
+.c{
+  clear:both;
+  line-height:0px;
+  margin:0px;
+  padding:0px;
+  height:0px;
+}
+.footer{
+  width:100%;
+  text-align:right;
+}
+.footer a {
+  color:black;
+  font-size:20px;
+  margin:20px;
+}

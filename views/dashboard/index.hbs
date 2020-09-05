@@ -1,0 +1,39 @@
+<div class="layui-container">
+  <blockquote>
+    <h2>Dashboard</h2>
+  </blockquote>
+  <ul class="pagination">
+    <li class="active"><a href="/dashboard">Show All</a></li>
+    <li class="waves-effect"><a href="/dashboard/showpublic">Show Public</a></li>
+    <li class="waves-effect"><a href="/dashboard/showprivate">Show Private</a></li>
+  </ul>
+  {{#if alltasks}}
+    <div class="row">
+      {{#each alltasks}}
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+          </div>
+          <div class="card-content center-align">
+            <h5>{{title}}</h5>
+            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss'}}</td>
+            <p>{{stripTags (truncate description 150)}}</p>
+            <br>
+            <div class="card-action center-align">
+              <a href="/dashboard/{{_id}}/edit" class="btn-float btn blue">Edit</a>
+              <a href="/dashboard/view/{{_id}}" class="btn-float btn grey">Read More</a>
+              <form action="/dashboard/{{_id}}" method="POST" id="delete-form">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn red">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  {{/if}}
+  <a class="btn-floating btn-large waves-effect waves-light red right mybutton" href='/dashboard/add'><i class="material-icons center-align"> + </i></a>
+</div>

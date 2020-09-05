@@ -1,0 +1,21 @@
+<div class="layui-container">
+  <blockquote>
+    <h2>Leaderboard</h2>
+  </blockquote>
+  <table class="striped">
+    <thead class="striped">
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each allusers}}
+        <tr>
+          <td><a href="/forum/user/{{_id}}">{{displayName}}</a></td>
+          <td>{{uscore}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

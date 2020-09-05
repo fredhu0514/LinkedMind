@@ -1,0 +1,53 @@
+<!-- @author Fred Hu -->
+
+<!-LayUI->
+<div class="layui-container">
+
+  <blockquote>
+    <h2>View Content</h2>
+  </blockquote>
+
+  <form action="/dashboard" method="POST" class="col s12">
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="title" name="title" style="#000000;" readonly value="{{task.title}}">
+        <label for="title">Title</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="privacy" name="privacy" style="#000000;" readonly value="{{task.privacy}}">
+        <label for="privacy">Privacy</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <h6>Content</h6>
+        <textarea id="conetnt" name="conetnt" class="materialize-textarea" style="color:#000000;" readonly>{{task.description}}</textarea>
+      </script>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field">
+      <input type="text" id="title" name="title" style="#000000;" readonly value="{{task.user.displayName}}">
+      <label for="title">Creator</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field">
+      <input type="text" id="title" name="title" style="#000000;" readonly value="{{formatDate task.createdAt 'MMMM Do YYYY, h:mm:ss'}}">
+      <label for="title">Publish Date</label>
+    </div>
+  </div>
+
+</form>
+
+<!-Need one more parameter called is_created_by_me (bool)->
+
+<a href="/dashboard" class="btn waves-effect waves-light red" style="width:70pt;">BACK</a>
+</div>
