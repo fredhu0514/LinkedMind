@@ -10,7 +10,8 @@ router.get('/', ensureAuth, async (req, res) => {
   try {
     const tasks = await Task.find({ privacy: 'public' }).populate('user').sort({ createdAt: 'desc' }).lean() // sorting based on createdAt
     res.render('forum/index', {
-      tasks
+      tasks,
+      userId: req.user.id
     });
   } catch (err) {
     console.error(err)
@@ -24,7 +25,8 @@ router.get('/view/:id', ensureAuth, async (req, res) => {
     _id: req.params.id
   }).populate('user')
   res.render('forum/viewstory', {
-    task
+    task,
+    userId: req.user.id
   })
 })
 
@@ -37,7 +39,8 @@ router.get('/user/:id', ensureAuth, async (req, res) => {
   const alltasks = await Task.find({ privacy: 'public', user: req.params.id }).sort({ createdAt: 'desc' }).lean()
   res.render('forum/viewuser', {
     user,
-    alltasks
+    alltasks,
+    userId: req.user.id
   })
 })
 

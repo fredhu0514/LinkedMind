@@ -33,7 +33,8 @@ router.get('/showpublic', ensureAuth, async (req, res) => {
   try {
     const publictasks = await Task.find({ user: req.user.id, privacy: 'public'}).lean()
     res.render('dashboard/showpublic', {
-      publictasks
+      publictasks,
+      userId: req.user.id
     });
   } catch (err) {
     console.error(err)
@@ -46,7 +47,8 @@ router.get('/showprivate', ensureAuth, async (req, res) => {
   try {
     const privatetasks = await Task.find({ user: req.user.id, privacy: 'private'}).lean()
     res.render('dashboard/showprivate', {
-      privatetasks
+      privatetasks,
+      userId: req.user.id
     });
   } catch (err) {
     console.error(err)
@@ -60,14 +62,17 @@ router.get('/:id/edit', ensureAuth, async (req, res) => {
     _id: req.params.id
   }).lean()
   res.render('dashboard/editstory', {
-    task
+    task,
+    userId: req.user.id
   })
 })
 
 // @description     Add a new task
 // @route           GET /dashboard/add
 router.get('/add', ensureAuth, (req, res) => {
-  res.render('dashboard/addstory')
+  res.render('dashboard/addstory', {
+    userId: req.user.id
+  })
 })
 
 // @description     Delete a task
