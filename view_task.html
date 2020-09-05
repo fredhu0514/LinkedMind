@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<!-@author Nora Du, Fred HU->
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="./layui_css/layui-v2.5.6/layui/css/layui.css"  media="all">
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -8,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha512-g06pohSHYbSOHKq8tdDGXckE6C23Yt30xlTFDhrO0OcO/bNO2MWXb63oqU/Y23GDMNOon100eGHxZPBnT4QgMw==" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="/css/style.css">
-    <title>team-ucsdb Unicode Project</title>
+    <title>UCSDB View Content</title>
   </head>
   <body>
     <nav>
@@ -25,12 +32,43 @@
       </div>
     </nav>
 
-    <h2>View Content</h2>
-    {{task.title}}<br>
-    {{task.createdAt}}<br>
-    {{task.description}}<br>
-    <a href='/forum'>Back</a>
+    <!-LayUI->
+    <div class="layui-container">
 
+      <blockquote>
+      <h2>View Content</h2>
+      </blockquote>
+
+      <form action="/dashboard" method="POST" class="col s12">
+
+        <div class="row">
+          <div class="input-field">
+            <input type="text" id="title" name="title" style="#000000;" readonly value={{task.title}}>
+            <label for="title">Title</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field">
+            <input type="text" id="privacy" name="privacy" style="#000000;" readonly value={{task.createdAt}}>
+            <label for="privacy">Privacy</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field">
+            <textarea id="description" name="description" class="materialize-textarea" style="color:#000000;" readonly>{{task.description}}</textarea>
+            <label for="textarea1">Content</label>
+            </script>
+          </div>
+        </div>
+
+      </form>
+
+      <!-Need one more parameter called is_created_by_me (bool)->
+
+      <button href="/forum" class="btn waves-effect waves-light red" style="width:70pt;">BACK</button>
+    </div>
 
 
 
