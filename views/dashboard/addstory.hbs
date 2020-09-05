@@ -5,7 +5,7 @@
   <form action="/dashboard" method="POST" class="col s12">
     <div class="row">
       <div class="input-field">
-        <input type="text" id="title" name="title" placeholder="Title Here">
+        <input type="text" id="title" name="title" placeholder="Required">
         <label for="title">Title</label>
       </div>
     </div>
@@ -22,8 +22,8 @@
 
     <div class="row">
       <div class="input-field">
-        <textarea id="description" name="description" class="materialize-textarea" placeholder="Content Here"></textarea>
-        <label for="textarea1">Content</label>
+        <h6>Content</h6>
+        <textarea id="description" name="content" class="materialize-textarea" style="color:#000000;" placeholder="Content Here">{{task.description}}</textarea>
         </script>
       </div>
     </div>
