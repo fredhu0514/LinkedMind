@@ -21,7 +21,7 @@ router.get('/', ensureAuth, async (req, res) => {
 router.get('/view/:id', ensureAuth, async (req, res) => {
   const task = await Task.findOne({
     _id: req.params.id
-  }).lean()
+  }).populate('user')
   res.render('dashboard/viewstory', {
     task
   })

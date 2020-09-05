@@ -25,15 +25,15 @@
 
     <div class="row">
       <div class="input-field">
+        <h6>Description</h6>
         <textarea id="description" name="description" class="materialize-textarea" style="color:#000000;" readonly>{{task.description}}</textarea>
-        <label for="textarea1">Content</label>
       </script>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field">
-      <input type="text" id="title" name="title" style="#000000;" readonly value={{task.user.displayName}}>
+      <input type="text" id="title" name="title" style="#000000;" readonly value="{{task.user.displayName}}">
       <label for="title">Creator</label>
     </div>
   </div>
