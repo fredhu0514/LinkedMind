@@ -25,49 +25,22 @@
       </div>
     </nav>
 
-    <blockquote>
-      <h2>Dashboard</h2>
-    </blockquote>
-    <ul class="pagination">
-      <!- 注意不同的link active也不同 ->
-      <li class="active"><a href="/dashboard/showpublic">Show Public</a></li>
-      <li class="waves-effect"><a href="/dashboard/showprivate">Show Private</a></li>
-      <li class="waves-effect"><a href="/dashboard'">Show All</a></li>
-      <a class="btn-floating btn-large waves-effect waves-light red" href='/dashboard/add'><i class="material-icons"> + </i></a>
-    </ul>
-
+    <h2>Leaderboard Page</h2>
     <table class="striped">
-      <thead>
+      <thead class="striped">
         <tr>
-          <th>Title</th>
-          <th>Date</th>
-          <th>Privacy</th>
-          <th>Author</th>
+          <th>Name</th>
+          <th>Score</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><a href="/forum/{{_id}}">{{title}}</a></td>
-          <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss'}}</td>
-          <td>{{privacy}}</td>
-          <td>{{user.displayName}}</td>
-        </tr>
-        <tr>
-          <td><a href="/forum/{{_id}}">{{title}}</a></td>
-          <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss'}}</td>
-          <td>{{privacy}}</td>
-          <td>{{user.displayName}}</td>
-        </tr>
-        <tr>
-          <td><a href="/forum/{{_id}}">{{title}}</a></td>
-          <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss'}}</td>
-          <td>{{privacy}}</td>
-          <td>{{user.displayName}}</td>
-        </tr>
+          <tr>
+            <td>{{displayName}}</td>
+            <td>{{score}}</td>
+          </tr>
       </tbody>
     </table>
-    <br>
-    <a href='/home' class="btn grey">Back</a>
+    <a href='/home'>Back</a>
 
 
 
