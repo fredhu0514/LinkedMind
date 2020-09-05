@@ -7,37 +7,37 @@
 <link rel="stylesheet" href="./layui_css/layui-v2.5.6/layui/css/layui.css"  media="all">
 
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Compiled and minified CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha512-g06pohSHYbSOHKq8tdDGXckE6C23Yt30xlTFDhrO0OcO/bNO2MWXb63oqU/Y23GDMNOon100eGHxZPBnT4QgMw==" crossorigin="anonymous" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha512-g06pohSHYbSOHKq8tdDGXckE6C23Yt30xlTFDhrO0OcO/bNO2MWXb63oqU/Y23GDMNOon100eGHxZPBnT4QgMw==" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="/css/style.css">
-    <title>UCSDB Post New Task</title>
-  </head>
+  <link rel="stylesheet" href="/css/style.css">
+  <title>UCSDB Post New Task</title>
+</head>
 
-  <body>
-    <nav>
-      <div class="nav-wrapper">
-        <div class="container">
-          <a href="#" class="brand-logo">LeaderBlog</a>
-          <ul class="hide-on-med-and-down right">
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/forum">Forum</a></li>
-            <li><a href="/leaderboard">Leaderboard</a></li>
-            <li><a href="/auth/logout">Log Out</a></li>
-          </ul>
-        </div>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="container">
+        <a href="#" class="brand-logo">LeaderBlog</a>
+        <ul class="hide-on-med-and-down right">
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/forum">Forum</a></li>
+          <li><a href="/leaderboard">Leaderboard</a></li>
+          <li><a href="/auth/logout">Log Out</a></li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-LayUI->
-    <div class="layui-container">
+  <!-LayUI->
+  <div class="layui-container">
     <blockquote>
-    <h2>Post New Story</h2>
-  </blockquote>
+      <h2>Post New Story</h2>
+    </blockquote>
     <div class="row">
       <form action="/dashboard" method="POST" class="col s12">
 
@@ -62,36 +62,36 @@
           <div class="input-field">
             <textarea id="description" name="description" class="materialize-textarea" placeholder="Content Here"></textarea>
             <label for="textarea1">Content</label>
-            </script>
-          </div>
+          </script>
         </div>
+      </div>
 
-        <div class="row">
-          <button type="submit" value="Save" class="btn waves-effect waves-light red" style="width:70pt;">SAVE</button>
-          <button href="/dashboard" class="btn grey" style="width:70pt">Cancel</button>
-        </div>
+      <div class="row">
+        <button type="submit" value="Save" class="btn waves-effect waves-light red" style="width:70pt;">SAVE</button>
+        <button href="/dashboard" class="btn grey" style="width:70pt">Cancel</button>
+      </div>
 
-      </form>
-    </div>
-    </div>
-
-
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js" integrity="sha512-P4rrEImABBYtBFdmrFPqF8rjh8iiRiupfQ4KLrBCL8dAivLiM2nh+1bJQeMb2ZglmIlGZdfTtgGdXH6H/hGVeg==" crossorigin="anonymous"></script>
+    </form>
+  </div>
+</div>
 
 
-    <script>
-      M.AutoInit();
-      $(document).ready(function() {
-        $('select').material_select();
-      });
-      M.FormSelect.init(document.querySelector('#status'))
 
-      $('#description').val('New Text');
-      M.textareaAutoResize($('#description'));
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js" integrity="sha512-P4rrEImABBYtBFdmrFPqF8rjh8iiRiupfQ4KLrBCL8dAivLiM2nh+1bJQeMb2ZglmIlGZdfTtgGdXH6H/hGVeg==" crossorigin="anonymous"></script>
 
-    </script>
-  </body>
+
+<script>
+M.AutoInit();
+$(document).ready(function() {
+  $('select').material_select();
+});
+M.FormSelect.init(document.querySelector('#status'))
+
+$('#description').val('New Text');
+M.textareaAutoResize($('#description'));
+
+</script>
+</body>
 </html>
