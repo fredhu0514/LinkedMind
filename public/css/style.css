@@ -18,3 +18,23 @@ p {
   bottom: 10px;
   right: 10px;
 }
+
+.task-card-image{
+    height: 250px; /* Your height here */
+    overflow: hidden;
+}
+
+.task-card-text {
+    height: 130px; /* Your height here */
+    overflow: hidden;
+}
+
+.task-view-card-image{
+    height: 300px; /* Your height here */
+    overflow: hidden;
+}
+
+.task-view-card-text {
+    height: 145px; /* Your height here */
+    overflow: hidden;
+}

@@ -1,6 +1,7 @@
-
 <div class="layui-container">
-  <h2>Edit</h2>
+  <blockquote>
+    <h2>Edit</h2>
+  </blockquote>
 <div class="row">
   <form action="/dashboard/{{task._id}}" method="POST" class="col s12">
     <input type="hidden" name="_method" value="PUT">
@@ -25,15 +26,15 @@
 
     <div class="row">
       <div class="input-field">
-        <h6>Content</h6>
-        <textarea id="description" name="description">{{task.description}}</textarea>
+        <textarea id="description" name="description" class="materialize-textarea" style="color:#000000;">{{task.description}}</textarea>
+        <label for="description">Content</label>
         </script>
       </div>
     </div>
 
     <div class="row">
-      <button type="submit" value="Save" class="btn waves-effect waves-light red" style="width:70pt;">UPDATE</button>
-      <a href="/dashboard" class="btn grey" style="width:70pt">Cancel</a>
+      <button type="submit" value="Save" class="btn waves-effect waves-light red btn-float" style="width:70pt;">UPDATE</button>
+      <a href="/dashboard" class="btn grey btn-float" style="width:70pt">Cancel</a>
     </div>
 
   </form>

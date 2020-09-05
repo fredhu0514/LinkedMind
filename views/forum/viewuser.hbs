@@ -52,27 +52,30 @@
 
 <div class="layui-container">
     <blockquote>
-        <h2>{{user.displayName}}'s Profile</h2>
+        <h2>{{userName}}Profile</h2>
     </blockquote>
     <br><br>
-    <div class="col s12 m8 offset-m2 l6 offset-l3">
+    <div class="col s9 m8 offset-m2 l6 offset-l3">
         <div class="card-panel grey lighten-5 z-depth-1">
           <div class="row valign-wrapper">
-            <div class="col s2">
+            <div class="col s3">
               <img src="{{user.image}}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
             </div>
-            <div class="col s10">
+            <div class="col s8">
               <div class="card horizontal">
                   <div class="card-stacked">
                       <div class="card-content">
-                          <p style="font:30pt">Total Likes: {{user.uscore}} &nbsp;&nbsp;❤️ </p>
+                          <h5>Total <i class="fas fa-heart" style="color: red;"></i>: {{user.uscore}} </h5>
                       </div>
                   </div>
               </div>
-              <ul class="collection">
-                <div style="font:30pt"> Top Five Popular story: </div>
+              <div style="margin-left:5px;"><h6>Top Five Popular story:</h6></div>
+              <ul class="collection" style="margin-top:15px;">
                 {{#each alltasks}}
-                  <li class="collection-item">{{title}}</li>
+                  <li class="collection-item">
+                    <a href="/forum/view/{{_id}}">{{title}}</a>
+                    <div class="right"><i class="fas fa-heart" style="color: red;"></i>: {{tscore}}</div>
+                  </li>
                 {{/each}}
               </ul>
             </div>

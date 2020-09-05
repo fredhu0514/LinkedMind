@@ -25,8 +25,8 @@
 
     <div class="row">
       <div class="input-field">
-        <h6>Content</h6>
-        <textarea id="content" name="content" class="materialize-textarea" style="color:#000000;" readonly>{{task.description}}</textarea>
+        <textarea id="description" name="description" class="materialize-textarea" style="color:#000000;" readonly>{{task.description}}</textarea>
+        <label for="description">Content</label>
       </script>
     </div>
   </div>
@@ -40,7 +40,7 @@
 
   <div class="row">
     <div class="input-field">
-      <input type="text" id="title" name="title" style="#000000;" readonly value="{{formatDate task.createdAt 'MMMM Do YYYY, h:mm:ss'}}">
+      <input type="text" id="title" name="title" style="#000000;" readonly value="{{formatDate task.createdAt 'MMM Do YYYY, h:mm:ss'}}">
       <label for="title">Publish Date</label>
     </div>
   </div>

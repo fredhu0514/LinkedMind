@@ -36,10 +36,18 @@ router.get('/user/:id', ensureAuth, async (req, res) => {
   const user = await User.findOne({
     _id: req.params.id
   }).lean()
-  const alltasks = await Task.find({ privacy: 'public', user: req.params.id }).sort({ createdAt: 'desc' }).lean()
+  const alltasks = await Task.find({ privacy: 'public', user: req.params.id }).sort({ createdAt: 'desc' }).limit(5).lean()
+  
+  let userName;
+  if (user.displayName === req.user.displayName) {
+    userName = "My "
+  } else {
+    userName = user.displayName + ", "
+  }
   res.render('forum/viewuser', {
     user,
     alltasks,
+    userName,
     userId: req.user.id
   })
 })
