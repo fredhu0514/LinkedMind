@@ -21,12 +21,12 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    friends: [{
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    }],
     image: {
         type: String
+    },
+    score: {
+        type: Number,
+        default: 0
     },
     createdAt: {
         type: Date,
