@@ -20,8 +20,14 @@
             <p>{{stripTags (truncate description 150)}}</p>
             <br>
             <div class="card-action center-align">
-              <a href="/dashboard/{{_id}}/edit" class="btn blue">Edit</a>
-              <a href="/dashboard/view/{{_id}}" class="btn blue">Read More</a>
+              <a href="/dashboard/{{_id}}/edit" class="btn-float btn blue">Edit</a>
+              <a href="/dashboard/view/{{_id}}" class="btn-float btn green">Read More</a>
+              <form action="/dashboard/{{_id}}" method="POST" id="delete-form">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn red">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </form>
             </div>
           </div>
         </div>

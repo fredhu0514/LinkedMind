@@ -64,11 +64,28 @@ router.get('/:id/edit', ensureAuth, async (req, res) => {
   })
 })
 
-// @description     Add a new story
+// @description     Add a new task
 // @route           GET /dashboard/add
 router.get('/add', ensureAuth, (req, res) => {
   res.render('dashboard/addstory')
 })
+
+// @description     Delete a task
+// @route           DELETE /dashboard/:id
+router.delete('/:id', ensureAuth, async (req, res) => {
+  try {
+    await Task.deleteOne({ _id: req.params.id }, function(err, result) {
+      if (err) {
+        console.error(err);
+      } else {
+        res.redirect('/dashboard')
+      }
+    });
+  } catch (err) {
+    console.error(err);
+  }
+})
+
 
 // @description     Process add task form
 // @route           POST /dashboard
@@ -79,6 +96,26 @@ router.post('/', ensureAuth, async (req, res) => {
     res.redirect('/dashboard')
   } catch (err) {
     console.error(err)
+  }
+})
+
+// @description     Update existed stories
+// @route           POST /dashboard/:id
+router.put('/:id', ensureAuth, async (req, res) => {
+  let task = await Task.findById(req.params.id).lean()
+
+  if (!task) {
+    console.err();
+  }
+
+  if (task.user != req.user.id) {
+    res.redirect('/dashboard')
+  } else {
+    task = await Task.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+      runValidators: true
+    })
+    res.redirect('/dashboard')
   }
 })
 

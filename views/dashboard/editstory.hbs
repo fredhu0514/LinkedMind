@@ -2,8 +2,8 @@
 <div class="layui-container">
   <h2>Edit</h2>
 <div class="row">
-  <form action="/dashboard/{{_id}}" method="POST" class="col s12">
-
+  <form action="/dashboard/{{task._id}}" method="POST" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
     <div class="row">
       <div class="input-field">
         <input type="text" id="title" name="title" value="{{task.title}}">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="row">
-      <button type="submit" value="Save" class="btn waves-effect waves-light red" style="width:70pt;">SAVE</button>
+      <button type="submit" value="Save" class="btn waves-effect waves-light red" style="width:70pt;">UPDATE</button>
       <a href="/dashboard" class="btn grey" style="width:70pt">Cancel</a>
     </div>
 

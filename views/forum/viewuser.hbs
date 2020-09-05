@@ -1,1 +1,67 @@
-{{user.displayName}}
+<style>
+  .secondary-menu-bar{
+    clear:both;
+    padding-left:30px;
+    line-height:40px;
+    height:40px;
+  }
+  .wrapper{
+    width:100%;
+  }
+  .name-holder{
+    margin-top:200px;
+    text-align:center;
+  }
+  .avatar-holder{
+    width:50%;
+    float:left;
+    text-align:right;
+  }
+  .avatar{
+    margin-right:20px;
+    float:right;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    font-size:24px;
+    background:#070;
+    color:#fff;
+    border-radius:25px;
+    text-align:center;
+  }
+  .nick-holder{
+    width:50%;
+    float:right;
+  }
+  #nick{
+    margin-left:20px;
+    float:left;
+    height:50px;
+    line-height:50px;
+    font-size:24px;
+  }
+  .c{
+    clear:both;
+    line-height:0px;
+    margin:0px;
+    padding:0px;
+    height:0px;
+  }
+</style>
+</head>
+<body>
+  
+<div class="secondary-menu-bar">
+  <a href='/forum'>&lt;Back</a>
+</div>
+<div class="wrapper">
+  <div class="name-holder">
+    <div class="avatar-holder">
+      <div class="avatar">DN</div>
+    </div>
+    <div class="nick-holder">
+      <div id="nick">{{user.displayName}}</div>
+    </div>
+    <div class="c"></div>
+  </div>
+</div>
