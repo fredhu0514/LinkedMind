@@ -7,7 +7,7 @@ const Task = require('../models/Task');
 // @route           GET /dashboard
 router.get('/', ensureAuth, async (req, res) => {
   try {
-    const alltasks = await Task.find({ user: req.user.id}).lean()
+    const alltasks = await Task.find({ user: req.user.id}).populate('user')
     res.render('dashboard/index', {
       alltasks
     });

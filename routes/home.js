@@ -5,7 +5,9 @@ const { ensureAuth } = require('../middleware/auth')
 // @description
 // @route           GET /home
 router.get('/', ensureAuth, (req, res) => {
-  res.render('home/index')
+  res.render('home', {
+    layout: 'home'
+  })
 })
 
 module.exports = router
