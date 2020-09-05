@@ -1,17 +1,22 @@
+<!-version2.0->
 <div class="wrapper">
   <div class="header">
-    Welcome back, Jane Doe
+    Welcome back, "{{task.user.displayName}}"
   </div>
+  <br />
+  <br />
+  <br />
   <div id="header-home">
     <div class="btn-group-home">
       <button><a href="/dashboard">Dashboard</a></button>
-      <button><a href="/forum">Forum</a></button>
+      <button><a href="/forum">Community</a></button>
       <button><a href="/leaderboard">Leaderboard</a></button>
       <div class="c"></div>
     </div>
     <div class="c"></div>
   </div>
-  <div class="footer">
-    <a href="/auth/logout">Log Out</a>
-  </div>
+</div>
+<br />
+<div class="footer">
+  <button class = "small-button" type="submit" value="Save"><a href="/auth/logout"><font color = "whitesmoke">Log Out</font></a></button>
 </div>
