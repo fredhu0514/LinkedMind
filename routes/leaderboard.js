@@ -7,7 +7,7 @@ const User = require('../models/User');
 // @route           GET /leaderboard
 router.get('/', ensureAuth, async (req, res) => {
   try {
-    const allusers = await User.find()
+    const allusers = await User.find().sort({ uscore: 'desc' }).lean()
     res.render('leaderboard/index', {
       allusers
     })
