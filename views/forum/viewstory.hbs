@@ -45,9 +45,18 @@
     </div>
   </div>
 
+  <div class="row">
+    <a href="/forum" class="btn waves-effect waves-light grey btn-float" style="width:70pt;">BACK</a>
+    <form action="/forum/{{user._id}}/{{_id}}" method="POST">
+      <button type="submit" class="btn red btn-float">
+        <i class="fas fa-heart left"></i>{{task.tscore}}
+      </button>
+    </form>
+  </div>
+
 </form>
 
 <!-Need one more parameter called is_created_by_me (bool)->
 
-<a href="/forum" class="btn waves-effect waves-light red" style="width:70pt;">BACK</a>
+
 </div>

@@ -33,8 +33,14 @@
     </div>
 
     <div class="row">
-      <button type="submit" value="Save" class="btn waves-effect waves-light red btn-float" style="width:70pt;">UPDATE</button>
+      <button type="submit" value="Save" class="btn waves-effect waves-light blue btn-float" style="width:70pt;">UPDATE</button>
       <a href="/dashboard" class="btn grey btn-float" style="width:70pt">Cancel</a>
+      <form action="/dashboard/{{_id}}" method="POST" id="delete-form">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn red btn-float">
+          <i class="fas fa-trash"></i>
+        </button>
+      </form>
     </div>
 
   </form>

@@ -6,14 +6,14 @@
     <thead class="striped">
       <tr>
         <th>Name</th>
-        <th>Score</th>
+        <th>Likes</th>
       </tr>
     </thead>
     <tbody>
       {{#each allusers}}
         <tr>
           <td><a href="/forum/user/{{_id}}">{{displayName}}</a></td>
-          <td>{{uscore}}</td>
+          <td><i class="fas fa-heart" style="color: red;"></i>: {{uscore}}</td>
         </tr>
       {{/each}}
     </tbody>
