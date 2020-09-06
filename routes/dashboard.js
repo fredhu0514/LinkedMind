@@ -9,7 +9,8 @@ router.get('/', ensureAuth, async (req, res) => {
   try {
     const alltasks = await Task.find({ user: req.user.id }).populate('user')
     res.render('dashboard/index', {
-      alltasks: alltasks
+      alltasks: alltasks,
+      userId: req.user.id
     })
   } catch (err) {
     console.error(err)
@@ -72,7 +73,7 @@ router.get('/:id/edit', ensureAuth, async (req, res) => {
 // @route           GET /dashboard/add
 router.get('/add', ensureAuth, (req, res) => {
   res.render('dashboard/addstory', {
-    userId: req.user.id
+    userId: req.user.id,
   })
 })
 

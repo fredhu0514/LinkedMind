@@ -5,14 +5,18 @@
   <table class="striped">
     <thead class="striped">
       <tr>
-        <th>Name</th>
-        <th>Likes</th>
+        <th><h6>Name</h6></th>
+        <th style="width:60%;"><h6>Likes</h6></th>
       </tr>
     </thead>
     <tbody>
       {{#each allusers}}
         <tr>
-          <td><a href="/forum/user/{{_id}}">{{displayName}}</a></td>
+          <td>
+            <span class="row">
+              <img src="{{image}}" alt="" class="circle responsive-img" style="width:50px; text-align: center"><a href="/forum/user/{{_id}}"><span>&nbsp;&nbsp; {{displayName}}</span></a>
+            </span>
+          </td>
           <td><i class="fas fa-heart" style="color: red;"></i>: {{uscore}}</td>
         </tr>
       {{/each}}
